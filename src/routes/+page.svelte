@@ -1,9 +1,9 @@
 <script>
-	let loanAmount = $state(0);
-	let interestRate = $state(0);
-	let years = $state(0);
-	let mortgageType = $state('repayment');
-	let monthlyPayment = $state(null);
+	let loanAmount = null;
+	let interestRate = null;
+	let years = null;
+	let mortgageType = null;
+	let monthlyPayment = null;
 
 	function calculateMortgage(event) {
 		event.preventDefault();
@@ -19,10 +19,10 @@
 	}
 
 	function resetForm() {
-		loanAmount = 0;
-		interestRate = 0;
-		years = 0;
-		mortgageType = 'repayment';
+		loanAmount = null;
+		interestRate = null;
+		years = null;
+		mortgageType = null;
 		monthlyPayment = null;
 	}
 </script>
@@ -40,29 +40,52 @@
 			<form class="mt-6 space-y-4" onsubmit={calculateMortgage}>
 				<div class="form-control">
 					<p class="text-gray-600">Mortgage Amount (€)</p>
-					<input type="number" class="w-full border-gray-300 bg-white-50" bind:value={loanAmount} />
+					<div class="flex items-center">
+						<div
+							class="bg-blue-100 border border-blue-300 text-blue-900 px-4 py-2 rounded-l-lg flex items-center font-semibold"
+							style="width: 50px; text-align: center;"
+						>
+							£
+						</div>
+						<input
+							type="number"
+							class="w-full border-gray-300 bg-white-50 rounded-r-lg p-2"
+							bind:value={loanAmount}
+						/>
+					</div>
 				</div>
 
 				<div class="flex gap-4">
 					<div class="flex-1 form-control">
 						<p class="text-gray-600">Mortgage Term</p>
-						<div class="flex items-center gap-2">
-							<input type="number" class="w-full border-gray-300" bind:value={years} />
-							<span class="text-gray-500">years</span>
+						<div class="flex items-center">
+							<input
+								type="number"
+								class="w-full border-gray-300 rounded-l-lg bg-white p-2"
+								bind:value={years}
+							/>
+							<div
+								class="bg-blue-100 border border-blue-300 text-blue-900 px-4 py-2 rounded-r-lg flex items-center font-semibold"
+							>
+								years
+							</div>
 						</div>
 					</div>
 
 					<div class="flex-1 form-control">
 						<p class="text-gray-600">Interest Rate</p>
-						<div class="flex items-center gap-2">
+						<div class="flex items-center">
 							<input
 								type="number"
 								step="0.01"
-								class="w-full border-gray-300"
-								placeholder="Interest Rate (%)"
+								class="w-full border-gray-300 rounded-l-lg bg-white p-2"
 								bind:value={interestRate}
 							/>
-							<span class="text-gray-500" style="background-color: #E3F4FC;">%</span>
+							<div
+								class="bg-blue-100 border border-blue-300 text-blue-900 px-4 py-2 rounded-r-lg flex items-center font-semibold"
+							>
+								%
+							</div>
 						</div>
 					</div>
 				</div>
@@ -90,14 +113,14 @@
 					</div>
 				</div>
 
-				<button type="submit" class="btn w-full mt-4" style="background-color: #D9DB30;"
-					><img
+				<button type="submit" class="btn w-full mt-4" style="background-color: #D9DB30;">
+					<img
 						src="/assets/images/icon-calculator.svg"
 						alt="Calculator"
 						class="w-4 h-4 mr-2"
 						style="width: 24px; height: 24px; margin-right: 8px"
-					/>Calculate Repayments</button
-				>
+					/>Calculate Repayments
+				</button>
 			</form>
 		</div>
 
@@ -106,7 +129,8 @@
 			style="background-color: #133040;"
 		>
 			<img src="/assets/images/illustration-empty.svg" alt="Illustration" class="w-40 mb-6" />
-			<h2 class="text-lg font-semibold">Results shown here</h2>
+			<h2 class="text-lg font-semibold text-white">Results shown here</h2>
+
 			{#if monthlyPayment === null}
 				<p class="text-gray-300 mt-2 text-center">
 					Complete the form and click "calculate repayments" to see what your monthly repayments
@@ -114,8 +138,8 @@
 				</p>
 			{:else}
 				<div class="mt-4">
-					<p>Your monthly repayments</p>
-					<p class="text-4xl font-bold mt-2">€{monthlyPayment.toFixed(2)}</p>
+					<p class="text-white">Your monthly repayments</p>
+					<p class="text-4xl font-bold mt-2 text-white">€{monthlyPayment.toFixed(2)}</p>
 				</div>
 			{/if}
 		</div>
