@@ -42,7 +42,7 @@
 					<p class="text-gray-600">Mortgage Amount (€)</p>
 					<div class="flex items-center">
 						<div
-							class="bg-blue-100 border border-blue-300 text-blue-900 px-4 py-2 rounded-l-lg flex items-center font-semibold"
+							class="bg-blue-100 border border-blue-300 text-blue-900 px-4 py-2 rounded-l-lg flex items-center"
 							style="width: 50px; text-align: center;"
 						>
 							£
@@ -65,7 +65,7 @@
 								bind:value={years}
 							/>
 							<div
-								class="bg-blue-100 border border-blue-300 text-blue-900 px-4 py-2 rounded-r-lg flex items-center font-semibold"
+								class="bg-blue-100 border border-blue-300 text-blue-900 px-4 py-2 rounded-r-lg flex items-center"
 							>
 								years
 							</div>
@@ -82,7 +82,7 @@
 								bind:value={interestRate}
 							/>
 							<div
-								class="bg-blue-100 border border-blue-300 text-blue-900 px-4 py-2 rounded-r-lg flex items-center font-semibold"
+								class="bg-blue-100 border border-blue-300 text-blue-900 px-4 py-2 rounded-r-lg flex items-center"
 							>
 								%
 							</div>
