@@ -43,9 +43,7 @@
 					<input type="number" class="w-full border-gray-300 bg-white-50" bind:value={loanAmount} />
 				</div>
 
-				<!-- Combine Mortgage Term and Interest Rate into one row -->
 				<div class="flex gap-4">
-					<!-- Mortgage Term -->
 					<div class="flex-1 form-control">
 						<p class="text-gray-600">Mortgage Term</p>
 						<div class="flex items-center gap-2">
@@ -54,7 +52,6 @@
 						</div>
 					</div>
 
-					<!-- Interest Rate -->
 					<div class="flex-1 form-control">
 						<p class="text-gray-600">Interest Rate</p>
 						<div class="flex items-center gap-2">
