@@ -62,7 +62,7 @@
 								placeholder="Interest Rate (%)"
 								bind:value={interestRate}
 							/>
-							<span class="text-gray-500">%</span>
+							<span class="text-gray-500" style="background-color: #E3F4FC;">%</span>
 						</div>
 					</div>
 				</div>
@@ -90,16 +90,27 @@
 					</div>
 				</div>
 
-				<button type="submit" class="btn btn-primary w-full mt-4">Calculate Repayments</button>
+				<button type="submit" class="btn w-full mt-4" style="background-color: #D9DB30;"
+					><img
+						src="/assets/images/icon-calculator.svg"
+						alt="Calculator"
+						class="w-4 h-4 mr-2"
+						style="width: 24px; height: 24px; margin-right: 8px"
+					/>Calculate Repayments</button
+				>
 			</form>
 		</div>
 
-		<div class="bg-secondary text-white p-8 flex flex-col justify-center items-center">
+		<div
+			class="bg p-8 flex flex-col justify-center items-center"
+			style="background-color: #133040;"
+		>
 			<img src="/assets/images/illustration-empty.svg" alt="Illustration" class="w-40 mb-6" />
 			<h2 class="text-lg font-semibold">Results shown here</h2>
 			{#if monthlyPayment === null}
 				<p class="text-gray-300 mt-2 text-center">
-					Complete the from and click "Calculate Repayments" to see your results.
+					Complete the form and click "calculate repayments" to see what your monthly repayments
+					should be.
 				</p>
 			{:else}
 				<div class="mt-4">
